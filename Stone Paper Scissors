@@ -1,0 +1,57 @@
+import random
+def gameWin(Computer, You):
+    if Computer == You:
+        return None
+    elif Computer =='s':
+        if You=='x':
+            return False
+        elif You =='p':
+            return True
+    elif Computer =='p':
+        if You =='s':
+            return True
+        elif You =='x':
+            return False
+
+    elif Computer =='x':
+        if You =='s':
+            return True
+        elif You=='p':
+            return False
+print("WELCOME TO STONE, PAPER & SCISSORS")
+w1= 0
+while w1>=0:
+    print("Get ready. It is the Computer's turn")
+    print("...Computer has made its decision")
+
+    Random_Number = random.randint(1,3) 
+    if Random_Number == 1:
+        Computer = 's'
+    elif Random_Number == 2:
+        Computer = 'p'
+    elif Random_Number == 3:
+        Computer = 'x'
+    print('''It's your turn now
+...
+    Choose wisely...''')
+    You = input("Stone(s),Paper(p) or Scissor(x)? ")
+    a = gameWin(Computer, You)
+
+    print("Computer chose ", end=" ")
+    print(Computer)
+    print("You chose ", end=" ")
+    print(You)
+    
+    if a == None:
+        print("The game is a tie!")
+    elif a:
+        print("YOU WIN!")
+    else:
+        print("YOU LOSE!")
+    user_y_n= input("Do you want to play again?(Yes or No): ")
+    if "Yes" in user_y_n or "YES" in user_y_n or "yes" in user_y_n or "Y" in user_y_n or "y" in user_y_n:
+        pass
+    else:
+        print("Thank you for playing STONE, PAPER & SCISSORS")
+        break
+    w1+=1
